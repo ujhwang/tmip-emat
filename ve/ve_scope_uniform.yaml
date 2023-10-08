@@ -1,0 +1,123 @@
+---
+# EMAT Scope Definition
+# 
+
+scope:
+    name: VisionEval
+    desc: VisionEval
+
+inputs:
+
+    ## UNCERTAINTIES ##
+
+    Population:
+        ptype: exogenous uncertainty
+        desc: population (numeric)
+        default: 8494513
+        min: 8494513
+        max: 12741804
+        dist:
+            name: uniform
+        corr: []
+
+    Employment growth:
+        ptype: exogenous uncertainty
+        desc: employment growth (percentage)
+        default: 1
+        min: 1
+        max: 1.6
+        dist:
+            name: uniform
+        corr: []
+        
+    Road capacity:
+        ptype: exogenous uncertainty
+        desc: road capacity (percentage)
+        default: 1
+        min: 1
+        max: 1.5
+        dist:
+            name: uniform
+        corr: []
+
+    Transit service:
+        ptype: exogenous uncertainty
+        desc: transit service (percentage)
+        default: 1
+        min: 1
+        max: 1.5
+        dist:
+            name: uniform
+        corr: []
+
+    Congestion charges:
+        ptype: exogenous uncertainty
+        desc: congestion charges (Dollar)
+        default: 0.0
+        min: 0.0
+        max: 1.0
+        dist:
+            name: uniform
+        corr: []
+
+    Telework:
+        ptype: exogenous uncertainty
+        desc: telework (percentage)
+        default: 0.05
+        min: 0.05
+        max: 0.5
+        dist:
+            name: uniform
+        corr: []
+
+    Fuel costs:
+        ptype: exogenous uncertainty
+        desc: fuel costs (Dollar)
+        default: 2.5
+        min: 2.5
+        max: 8
+        dist:
+            name: uniform
+        corr: []
+
+    VMT tax:
+        ptype: exogenous uncertainty
+        desc: VMT tax (Dollar)
+        default: 0.45
+        min: 0.45
+        max: 1.8
+        dist:
+            name: uniform
+        corr: []
+
+    Powertrains:
+        ptype: exogenous uncertainty
+        desc: powertrains (percentage)
+        default: 0.35
+        min: 0.35
+        max: 0.95
+        dist:
+            name: uniform
+        corr: []
+
+outputs:    
+    Dvmt:
+        kind: minimize
+
+    DailyCO2e:
+        kind: minimize
+
+    Vehicles:
+        kind: minimize
+
+    VehicleTrips:
+        kind: minimize
+
+    WalkTrips:
+        kind: maximize
+
+    BikeTrips:
+        kind: maximize
+
+    TransitTrips:
+        kind: maximize
